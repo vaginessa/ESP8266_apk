@@ -17,4 +17,28 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+
+
+    <!--创维电视页面控件统一属性集合-->
+    <style name="ItemAttrs">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:background">@drawable/tv_num_bg_selector</item>
+    </style>
+
+    <!--数字键盘页面控件属性集合-->
+    <style name="ItemNumberAttrs">
+
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:background">@drawable/tv_num_bg_selector</item>
+    </style>
 </resources>

@@ -14,6 +14,8 @@ import android.widget.Toast;
 import com.gta.administrator.infraredcontrol.adapter.DividerGridItemDecoration;
 import com.gta.administrator.infraredcontrol.adapter.RecycleViewAdapter;
 import com.gta.administrator.infraredcontrol.bean.DevicesModule;
+import com.gta.administrator.infraredcontrol.tv.TvBrandsListActivity;
+import com.gta.administrator.infraredcontrol.tv.HW_TvControlActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -98,12 +100,12 @@ public class MainActivity extends AppCompatActivity {
                     case 1:
                         startActivity(new Intent(mContext, AirConditionControlActivity.class));
                         break;
+                    case 2:
+                        startActivity(new Intent(mContext, TvBrandsListActivity.class));
+                        break;
                     case 3:
-                        startActivity(new Intent(mContext, TvControlActivity.class));
                         break;
                 }
-
-
 
             }
 
@@ -131,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                startActivity(new Intent(mContext, TvControlActivity.class));
+                startActivity(new Intent(mContext, HW_TvControlActivity.class));
 
             }
         });

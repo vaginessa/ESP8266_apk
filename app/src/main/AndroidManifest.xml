@@ -19,9 +19,14 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".TvControlActivity"
-            android:label="@string/tv_activity" />
+            android:name=".tv.HW_TvControlActivity"
+            android:label="@string/hw_tv_activity" />
         <activity android:name=".AirConditionControlActivity" />
+        <activity
+            android:name=".tv.TvBrandsListActivity"
+            android:label="@string/tv_brands_select" />
+        <activity android:name=".tv.CW_TvControlActivity"
+            android:label="@string/cw_tv_activity"></activity>
     </application>
 
 </manifest>
