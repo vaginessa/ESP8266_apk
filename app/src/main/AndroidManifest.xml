@@ -33,7 +33,9 @@
             android:label="@string/fan_brands_select" />
         <activity android:name=".fan.MD_FanControlActivity" />
         <activity android:name=".powerAmplification.PowerAmplification_BrandsActivity" />
-        <activity android:name=".powerAmplification.TL_PowerAmplificationControlActivity"></activity>
+        <activity android:name=".powerAmplification.TL_PowerAmplificationControlActivity" />
+        <activity android:name=".dvd.DvdBrandsListActivity" />
+        <activity android:name=".dvd.BBG_DvdControlActivity"></activity>
     </application>
 
 </manifest>
