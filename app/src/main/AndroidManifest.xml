@@ -4,7 +4,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/app_icon"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -19,12 +19,15 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".tv.HW_TV"
+            android:name=".setTopBoxes.HW_TV"
             android:label="@string/hw_tv_activity" />
         <activity android:name=".AirConditionControlActivity" />
         <activity
             android:name=".tv.TvBrandsListActivity"
             android:label="@string/tv_brands_select" />
+        <activity
+            android:name=".setTopBoxes.SetTopBoxesBrandsListActivity"
+            android:label="@string/set_top_boxes_brands_select" />
         <activity
             android:name=".tv.CW_TvControlActivity"
             android:label="@string/cw_tv_activity" />

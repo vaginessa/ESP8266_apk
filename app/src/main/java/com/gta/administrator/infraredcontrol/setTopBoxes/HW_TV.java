@@ -1,4 +1,4 @@
-package com.gta.administrator.infraredcontrol.tv;
+package com.gta.administrator.infraredcontrol.setTopBoxes;
 
 import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;

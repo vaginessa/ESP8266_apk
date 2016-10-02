@@ -1,4 +1,4 @@
-package com.gta.administrator.infraredcontrol.tv;
+package com.gta.administrator.infraredcontrol.setTopBoxes;
 
 
 import android.os.Bundle;
@@ -12,10 +12,10 @@ import com.gta.administrator.infraredcontrol.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class HwTowFragment extends Fragment {
+public class HwOneFragment extends Fragment {
 
 
-    public HwTowFragment() {
+    public HwOneFragment() {
         // Required empty public constructor
     }
 
@@ -24,7 +24,7 @@ public class HwTowFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_hw_tow, container, false);
+        return inflater.inflate(R.layout.fragment_hw_one_control, container, false);
     }
 
 }

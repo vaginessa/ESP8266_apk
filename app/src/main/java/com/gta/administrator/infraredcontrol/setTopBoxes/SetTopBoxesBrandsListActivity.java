@@ -1,25 +1,25 @@
-package com.gta.administrator.infraredcontrol.tv;
+package com.gta.administrator.infraredcontrol.setTopBoxes;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.gta.administrator.infraredcontrol.R;
-import com.gta.administrator.infraredcontrol.setTopBoxes.HW_TV;
+import com.gta.administrator.infraredcontrol.tv.CW_TvControlActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class TvBrandsListActivity extends AppCompatActivity {
+public class SetTopBoxesBrandsListActivity extends AppCompatActivity {
 
     private ListView tv_brands_list;
 
     private static final String[] brands = new String[] {
-            "创维电视",
+            "华为IPTV"
     };
 
     private List<String> tvBrands = new ArrayList<>();
@@ -38,7 +38,7 @@ public class TvBrandsListActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 switch (position) {
                     case 0:
-                        startActivity(new Intent(TvBrandsListActivity.this, CW_TvControlActivity.class));
+                        startActivity(new Intent(SetTopBoxesBrandsListActivity.this, HW_TV.class));
                         break;
                 }
             }

@@ -17,6 +17,7 @@ import com.gta.administrator.infraredcontrol.bean.DevicesModule;
 import com.gta.administrator.infraredcontrol.dvd.DvdBrandsListActivity;
 import com.gta.administrator.infraredcontrol.fan.FanBrandsListActivity;
 import com.gta.administrator.infraredcontrol.powerAmplification.PowerAmplification_BrandsActivity;
+import com.gta.administrator.infraredcontrol.setTopBoxes.SetTopBoxesBrandsListActivity;
 import com.gta.administrator.infraredcontrol.tv.TvBrandsListActivity;
 
 import java.util.ArrayList;
@@ -106,6 +107,7 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(new Intent(mContext, TvBrandsListActivity.class));
                         break;
                     case 3:
+                        startActivity(new Intent(mContext, SetTopBoxesBrandsListActivity.class));
                         break;
                     case 4:
                         startActivity(new Intent(mContext, FanBrandsListActivity.class));
