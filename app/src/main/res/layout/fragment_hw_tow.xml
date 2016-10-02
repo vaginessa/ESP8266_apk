@@ -16,11 +16,10 @@
     </FrameLayout>
 
 
-
-
     <RelativeLayout
         android:layout_below="@id/framelayout_1"
         android:layout_width="match_parent"
+        android:layout_marginBottom="20dp"
         android:layout_height="wrap_content">
 
         <include

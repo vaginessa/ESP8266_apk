@@ -41,7 +41,7 @@ public class TvBrandsListActivity extends AppCompatActivity {
                         startActivity(new Intent(TvBrandsListActivity.this, CW_TvControlActivity.class));
                         break;
                     case 1:
-                        startActivity(new Intent(TvBrandsListActivity.this, HW_TvControlActivity.class));
+                        startActivity(new Intent(TvBrandsListActivity.this, HW_TV.class));
                         break;
                 }
             }

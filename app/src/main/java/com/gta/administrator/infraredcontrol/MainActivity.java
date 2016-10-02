@@ -14,8 +14,9 @@ import android.widget.Toast;
 import com.gta.administrator.infraredcontrol.adapter.DividerGridItemDecoration;
 import com.gta.administrator.infraredcontrol.adapter.RecycleViewAdapter;
 import com.gta.administrator.infraredcontrol.bean.DevicesModule;
+import com.gta.administrator.infraredcontrol.fan.FanBrandsListActivity;
+import com.gta.administrator.infraredcontrol.powerAmplification.PowerAmplification_BrandsActivity;
 import com.gta.administrator.infraredcontrol.tv.TvBrandsListActivity;
-import com.gta.administrator.infraredcontrol.tv.HW_TvControlActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -105,6 +106,12 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case 3:
                         break;
+                    case 4:
+                        startActivity(new Intent(mContext, FanBrandsListActivity.class));
+                        break;
+                    case 6:
+                        startActivity(new Intent(mContext, PowerAmplification_BrandsActivity.class));
+                        break;
                 }
 
             }
@@ -117,27 +124,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-/*
-
-    private void initView() {
-        ari_condition_imgbtn = (ImageButton) findViewById(R.id.ari_condition_imgbtn);
-        ari_condition_imgbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(mContext, AirConditionControlActivity.class));
-
-            }
-        });
-        tv_imgbtn = (ImageButton) findViewById(R.id.tv_imgbtn);
-        tv_imgbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                startActivity(new Intent(mContext, HW_TvControlActivity.class));
-
-            }
-        });
-    }*/
 
 
     private void initData() {

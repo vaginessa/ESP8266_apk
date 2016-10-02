@@ -19,14 +19,21 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".tv.HW_TvControlActivity"
+            android:name=".tv.HW_TV"
             android:label="@string/hw_tv_activity" />
         <activity android:name=".AirConditionControlActivity" />
         <activity
             android:name=".tv.TvBrandsListActivity"
             android:label="@string/tv_brands_select" />
-        <activity android:name=".tv.CW_TvControlActivity"
-            android:label="@string/cw_tv_activity"></activity>
+        <activity
+            android:name=".tv.CW_TvControlActivity"
+            android:label="@string/cw_tv_activity" />
+        <activity
+            android:name=".fan.FanBrandsListActivity"
+            android:label="@string/fan_brands_select" />
+        <activity android:name=".fan.MD_FanControlActivity" />
+        <activity android:name=".powerAmplification.PowerAmplification_BrandsActivity" />
+        <activity android:name=".powerAmplification.TL_PowerAmplificationControlActivity"></activity>
     </application>
 
 </manifest>
