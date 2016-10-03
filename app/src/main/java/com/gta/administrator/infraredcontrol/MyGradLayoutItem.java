@@ -24,17 +24,13 @@ public class MyGradLayoutItem extends LinearLayout {
     }
 
     public MyGradLayoutItem(Context context, AttributeSet attrs, int defStyleAttr) {
-        this(context, attrs, defStyleAttr, 0);
-    }
-
-    public MyGradLayoutItem(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-        super(context, attrs, defStyleAttr, defStyleRes);
+        super(context, attrs, defStyleAttr);
 
 
         View view = LayoutInflater.from(context).inflate(R.layout.my_gradlayout_item, null, false);
 
         final TypedArray a = context.obtainStyledAttributes(
-                attrs, R.styleable.MyGradLayoutItem, defStyleAttr, defStyleRes);
+                attrs, R.styleable.MyGradLayoutItem, defStyleAttr, 0);
 
         int res = a.getResourceId(R.styleable.MyGradLayoutItem_gradlayoutSrc, 0);
         ImageView imageView = (ImageView)view.findViewById(R.id.item_img);
@@ -46,9 +42,14 @@ public class MyGradLayoutItem extends LinearLayout {
 
         a.recycle();
         addView(view);
-
-
     }
+/*
+    public MyGradLayoutItem(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+        super(context, attrs, defStyleAttr, defStyleRes);
+
+
+
+    }*/
 
 
 }

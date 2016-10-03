@@ -38,7 +38,8 @@
         <activity android:name=".powerAmplification.PowerAmplification_BrandsActivity" />
         <activity android:name=".powerAmplification.TL_PowerAmplificationControlActivity" />
         <activity android:name=".dvd.DvdBrandsListActivity" />
-        <activity android:name=".dvd.BBG_DvdControlActivity"></activity>
+        <activity android:name=".dvd.BBG_DvdControlActivity" />
+        <activity android:name=".bulb.BulbActivity"></activity>
     </application>
 
 </manifest>

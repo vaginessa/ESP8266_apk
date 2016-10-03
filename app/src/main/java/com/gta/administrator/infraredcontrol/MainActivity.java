@@ -14,6 +14,8 @@ import android.widget.Toast;
 import com.gta.administrator.infraredcontrol.adapter.DividerGridItemDecoration;
 import com.gta.administrator.infraredcontrol.adapter.RecycleViewAdapter;
 import com.gta.administrator.infraredcontrol.bean.DevicesModule;
+import com.gta.administrator.infraredcontrol.bulb.BulbActivity;
+import com.gta.administrator.infraredcontrol.bulb.ColorPickView;
 import com.gta.administrator.infraredcontrol.dvd.DvdBrandsListActivity;
 import com.gta.administrator.infraredcontrol.fan.FanBrandsListActivity;
 import com.gta.administrator.infraredcontrol.powerAmplification.PowerAmplification_BrandsActivity;
@@ -117,6 +119,10 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case 7:
                         startActivity(new Intent(mContext, DvdBrandsListActivity.class));
+                        break;
+                    case 11:
+                        startActivity(new Intent(mContext, BulbActivity.class));
+                        break;
 
                 }
 
