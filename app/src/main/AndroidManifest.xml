@@ -8,15 +8,23 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".MainActivity"
-            android:label="@string/app_name"
+        <activity android:name=".Main1Activity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
+
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
         </activity>
         <activity
             android:name=".setTopBoxes.HW_TV"
@@ -39,7 +47,7 @@
         <activity android:name=".powerAmplification.TL_PowerAmplificationControlActivity" />
         <activity android:name=".dvd.DvdBrandsListActivity" />
         <activity android:name=".dvd.BBG_DvdControlActivity" />
-        <activity android:name=".bulb.BulbActivity"></activity>
+        <activity android:name=".bulb.BulbActivity" />
     </application>
 
 </manifest>
