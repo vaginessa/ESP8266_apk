@@ -1,22 +1,19 @@
 package com.gta.administrator.infraredcontrol;
 
 import android.content.Intent;
-import android.graphics.Color;
-import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
-import android.widget.TableLayout;
+import android.widget.Button;
+import android.widget.TextView;
+
+import com.gta.administrator.infraredcontrol.other.MyGradLayoutItem;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +21,10 @@ import java.util.List;
 public class Main1Activity extends AppCompatActivity implements View.OnClickListener{
 
     private Toolbar toolbar;
+    private Button toolbar_start_btn;
+    private TextView toolbar_middle_text;
+    private Button toolbar_end_btn;
+
     private ViewPager my_view_pager;
 
     private List<Fragment> fragments;
@@ -37,20 +38,36 @@ public class Main1Activity extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.activity_main1);
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
-        toolbar.inflateMenu(R.menu.menu_main1);
-        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+        toolbar_start_btn = (Button) findViewById(R.id.toolbar_start_btn);
+        toolbar_start_btn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onMenuItemClick(MenuItem item) {
-                return true;
+            public void onClick(View v) {
+
             }
         });
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+        toolbar_middle_text = (TextView) findViewById(R.id.toolbar_middle_text);
+        toolbar_end_btn = (Button) findViewById(R.id.toolbar_end_btn);
+        toolbar_end_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Main1Activity.this, MainActivity.class));
             }
         });
+
+//        setSupportActionBar(toolbar);
+//        toolbar.inflateMenu(R.menu.menu_main1);
+//        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+//            @Override
+//            public boolean onMenuItemClick(MenuItem item) {
+//                return true;
+//            }
+//        });
+//        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(Main1Activity.this, MainActivity.class));
+//            }
+//        });
 
 
         my_view_pager = (ViewPager) findViewById(R.id.my_viewpage);

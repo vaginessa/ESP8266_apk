@@ -1,4 +1,4 @@
-package com.gta.administrator.infraredcontrol.setTopBoxes;
+package com.gta.administrator.infraredcontrol.satellite_tv;
 
 
 import android.content.Context;
@@ -13,18 +13,20 @@ import com.gta.administrator.infraredcontrol.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class HwTowFragment extends Fragment {
+public class HwOneFragment extends Fragment {
 
     private HW_TV hw_tvActivity;
     private HW_TV.DirectionResIdHolder myDirectionHolder;
 
-    public HwTowFragment() {
+
+    public HwOneFragment() {
         // Required empty public constructor
     }
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
+
         hw_tvActivity = (HW_TV) getActivity();
         myDirectionHolder = hw_tvActivity.getDirectionResIdHolder();//这里获得HW_TV 这个Activity的方向布局资源的id
     }
@@ -33,10 +35,7 @@ public class HwTowFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-
-
-
-        return inflater.inflate(R.layout.fragment_hw_tow, container, false);
+        return inflater.inflate(R.layout.fragment_hw_one_control, container, false);
     }
 
 }

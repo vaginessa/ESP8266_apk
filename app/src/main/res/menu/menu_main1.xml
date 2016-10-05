@@ -5,6 +5,6 @@
     <item
         android:id="@+id/action_sacn"
         android:orderInCategory="100"
-        android:icon="@mipmap/icon_scan"
+        android:title="添加"
         app:showAsAction="always" />
 </menu>

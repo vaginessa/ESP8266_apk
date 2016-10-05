@@ -8,7 +8,8 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Main1Activity"
+        <activity
+            android:name=".Main1Activity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,15 +21,19 @@
             android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN" />-->
 
-                <!--<category android:name="android.intent.category.LAUNCHER" />-->
-            <!--</intent-filter>-->
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
         <activity
             android:name=".setTopBoxes.HW_TV"
             android:label="@string/hw_tv_activity" />
+        <activity android:name=".satellite_tv.HW_TV"
+            android:label="品牌1"/>
         <activity android:name=".AirConditionControlActivity" />
         <activity
             android:name=".tv.TvBrandsListActivity"
@@ -47,7 +52,13 @@
         <activity android:name=".powerAmplification.TL_PowerAmplificationControlActivity" />
         <activity android:name=".dvd.DvdBrandsListActivity" />
         <activity android:name=".dvd.BBG_DvdControlActivity" />
-        <activity android:name=".bulb.BulbActivity" />
+        <activity
+            android:name=".bulb.BulbActivity"
+            android:label="@string/bulb_activity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".projectors.ProjectorsBrandsSelectActivity" />
+        <activity android:name=".projectors.ProjectorsBrands1Activity" />
+        <activity android:name=".satellite_tv.SatelliteTvBrandsActivity" />
     </application>
 
 </manifest>

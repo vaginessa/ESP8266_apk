@@ -22,17 +22,17 @@
         android:layout_height="0dp"
         android:layout_weight="1">
 
-        <com.gta.administrator.infraredcontrol.MyGradLayoutItem
+        <com.gta.administrator.infraredcontrol.other.MyGradLayoutItem
             android:id="@+id/home_button"
             style="@style/ItemAttrs2"
             attrs:gradlayoutSrc="@mipmap/icon_rom"
             attrs:gradlayoutText="房间"/>
-        <com.gta.administrator.infraredcontrol.MyGradLayoutItem
+        <com.gta.administrator.infraredcontrol.other.MyGradLayoutItem
             android:id="@+id/device_button"
             style="@style/ItemAttrs2"
             attrs:gradlayoutSrc="@mipmap/icon_device"
             attrs:gradlayoutText="设备"/>
-        <com.gta.administrator.infraredcontrol.MyGradLayoutItem
+        <com.gta.administrator.infraredcontrol.other.MyGradLayoutItem
             android:id="@+id/set_button"
             style="@style/ItemAttrs2"
             attrs:gradlayoutSrc="@mipmap/icon_setting"

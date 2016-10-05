@@ -1,4 +1,4 @@
-package com.gta.administrator.infraredcontrol.setTopBoxes;
+package com.gta.administrator.infraredcontrol.satellite_tv;
 
 
 import android.content.Context;

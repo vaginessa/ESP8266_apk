@@ -6,6 +6,12 @@
 
     </declare-styleable>
 
+    <declare-styleable name="MyToolBarAttrs">
+        <attr name="startText" format="string" />
+        <attr name="middleText" format="string" />
+        <attr name="endText" format="string" />
+    </declare-styleable>
+
     <declare-styleable name="color_picker">
 
         <!-- 背景圆的半径 -->

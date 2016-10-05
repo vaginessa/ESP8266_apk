@@ -19,6 +19,8 @@ import com.gta.administrator.infraredcontrol.bulb.ColorPickView;
 import com.gta.administrator.infraredcontrol.dvd.DvdBrandsListActivity;
 import com.gta.administrator.infraredcontrol.fan.FanBrandsListActivity;
 import com.gta.administrator.infraredcontrol.powerAmplification.PowerAmplification_BrandsActivity;
+import com.gta.administrator.infraredcontrol.projectors.ProjectorsBrandsSelectActivity;
+import com.gta.administrator.infraredcontrol.satellite_tv.SatelliteTvBrandsActivity;
 import com.gta.administrator.infraredcontrol.setTopBoxes.SetTopBoxesBrandsListActivity;
 import com.gta.administrator.infraredcontrol.tv.TvBrandsListActivity;
 
@@ -90,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
 
         my_recycle_view = (RecyclerView) findViewById(R.id.my_recycle_view);
         my_recycle_view.setLayoutManager(new GridLayoutManager(this, 3));
-        adapter = new RecycleViewAdapter(this, devicesModuleList);
+        adapter = new RecycleViewAdapter(mContext, devicesModuleList);
         my_recycle_view.setAdapter(adapter);
         my_recycle_view.addItemDecoration(new DividerGridItemDecoration(this));
         adapter.setOnItemClickListener(new RecycleViewAdapter.OnItemClickListener() {
@@ -119,6 +121,12 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case 7:
                         startActivity(new Intent(mContext, DvdBrandsListActivity.class));
+                        break;
+                    case 8:
+                        startActivity(new Intent(mContext, ProjectorsBrandsSelectActivity.class));
+                        break;
+                    case  9:
+                        startActivity(new Intent(mContext, SatelliteTvBrandsActivity.class));
                         break;
                     case 11:
                         startActivity(new Intent(mContext, BulbActivity.class));

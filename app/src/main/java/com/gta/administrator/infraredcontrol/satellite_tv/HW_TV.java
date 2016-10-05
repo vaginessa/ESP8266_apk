@@ -1,4 +1,4 @@
-package com.gta.administrator.infraredcontrol.setTopBoxes;
+package com.gta.administrator.infraredcontrol.satellite_tv;
 
 import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
@@ -28,8 +28,8 @@ public class HW_TV extends AppCompatActivity {
 
         my_viewpage = (ViewPager) findViewById(R.id.my_viewpage);
 
-        views.add(getLayoutInflater().inflate(R.layout.layout_hw_tv_one, null));
-        views.add(getLayoutInflater().inflate(R.layout.layout_hw_tv_tow, null));
+        views.add(getLayoutInflater().inflate(R.layout.layout_satellite_tv_one, null));
+        views.add(getLayoutInflater().inflate(R.layout.layout_satellite_tv_tow, null));
         my_viewpage.setAdapter(new MyViewPageAdapter());
         my_viewpage.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override

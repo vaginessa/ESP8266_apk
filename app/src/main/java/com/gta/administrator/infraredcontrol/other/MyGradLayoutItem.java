@@ -1,4 +1,4 @@
-package com.gta.administrator.infraredcontrol;
+package com.gta.administrator.infraredcontrol.other;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.gta.administrator.infraredcontrol.R;
 
 /**
  * Created by yanwen on 16/10/1.

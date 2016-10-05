@@ -5,6 +5,7 @@
     <string name="tv_brands_select">电视品牌选择</string>
     <string name="set_top_boxes_brands_select">机顶盒品牌选择</string>
     <string name="fan_brands_select">风扇品牌选择</string>
+    <string name="bulb_activity">灯泡</string>
 
 
     <string name="action_settings">Settings</string>
