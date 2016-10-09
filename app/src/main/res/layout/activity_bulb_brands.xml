@@ -18,7 +18,7 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:background="@color/colorDivide"
-        android:layout_height="70dp">
+        android:layout_height="60dp">
 
         <com.gta.administrator.infraredcontrol.other.MyGradLayoutItem
             android:id="@+id/id_color_item"

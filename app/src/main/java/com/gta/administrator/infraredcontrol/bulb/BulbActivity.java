@@ -28,6 +28,9 @@ public class BulbActivity extends AppCompatActivity {
 
 //    private FrameLayout bulb_framelayout;
 
+    private Bulb_DoubleColorFragment bulb_doubleColorFragment;
+    private Bulb_ColorFragment bulb_colorFragment;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,6 +68,8 @@ public class BulbActivity extends AppCompatActivity {
 
     private void initView() {
 //        bulb_framelayout = (FrameLayout) findViewById(R.id.bulb_framelayout);
+        bulb_doubleColorFragment = new Bulb_DoubleColorFragment();
+        bulb_colorFragment = new Bulb_ColorFragment();
 
 
         for (int i = 0; i < item_id.length; i++) {
@@ -75,9 +80,9 @@ public class BulbActivity extends AppCompatActivity {
                     for (int j = 0; j < item_id.length; j++) {
                         if (v.getId() == item_id[j]) {
                             if (j == 1) {
-                                replaceFragment(R.id.bulb_framelayout, new Bulb_DoubleColorFragment());
+                                replaceFragment(R.id.bulb_framelayout, bulb_doubleColorFragment);
                             } else {
-                                replaceFragment(R.id.bulb_framelayout, new Bulb_ColorFragment());
+                                replaceFragment(R.id.bulb_framelayout, bulb_colorFragment);
                             }
                             id_bottom_item[j].setSelected(true);
                         } else {
@@ -100,4 +105,13 @@ public class BulbActivity extends AppCompatActivity {
         transaction.replace(layout, fragment);
         transaction.commit();
     }
+
+/*    *//**
+     * 获得ViewPager
+     * @param id
+     * @return
+     *//*
+    public View obtainAdcitivtyWidget(int id) {
+        return findViewById(id);
+    }*/
 }

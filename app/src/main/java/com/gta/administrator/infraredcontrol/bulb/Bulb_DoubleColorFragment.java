@@ -4,8 +4,14 @@ package com.gta.administrator.infraredcontrol.bulb;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +24,7 @@ import com.gta.administrator.infraredcontrol.adapter.RecycleViewAdapter;
 import com.gta.administrator.infraredcontrol.bean.DevicesModule;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -25,26 +32,26 @@ import java.util.List;
  */
 public class Bulb_DoubleColorFragment extends Fragment {
 
+    private static final String TAG = "Bulb_DoubleColorFragment";
+    private View view;
     private BulbActivity mActivity;
 
-    private View view;
-    private RecyclerView my_recyclerview;
-    private String[] colorBulbs = {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-    };
+    private ViewPager my_viewpager;
+    private List<Fragment> fragments = new ArrayList<>(2);
+    private Bulb_DoubleColorFragmentSub1 bulb_doubleColorFragmentSub1 = new Bulb_DoubleColorFragmentSub1();
+    private Bulb_DoubleColorFragmentSub2 bulb_doubleColorFragmentSub2 = new Bulb_DoubleColorFragmentSub2();
 
+    private MyViewPager myViewPager;
 
     public Bulb_DoubleColorFragment() {
         // Required empty public constructor
         mActivity = (BulbActivity) getActivity();
+
+//        my_viewpager = (ViewPager) mActivity.obtainAdcitivtyWidget(R.id.my_viewpage);
+        Log.d(TAG, "Bulb_DoubleColorFragment()");
+
+        fragments.add(bulb_doubleColorFragmentSub1);
+        fragments.add(bulb_doubleColorFragmentSub2);
     }
 
 
@@ -53,45 +60,46 @@ public class Bulb_DoubleColorFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_bulb__double_color, container, false);
-        my_recyclerview = (RecyclerView) view.findViewById(R.id.my_recycle_view);
-        my_recyclerview.setLayoutManager(new GridLayoutManager(mActivity, 3));
-        my_recyclerview.setAdapter(new MyAdapter());
-        my_recyclerview.addItemDecoration(new DividerGridItemDecoration(getActivity()));
+        my_viewpager = (ViewPager) view.findViewById(R.id.my_viewpage);//获取到ViewPager
+
+        //这里注意必须传入getChildFragmentManager()，否则第二次进来Fragment不会显示
+        //getFragmentManager()会调用父的FragmentManager
+        myViewPager = new MyViewPager(getChildFragmentManager());
+//            my_viewpager.setCurrentItem(0);
+        my_viewpager.setAdapter(myViewPager);
+
+        Log.d(TAG, "onCreateView()");
+
+//        myViewPager.notifyDataSetChanged();
 
         return view;
     }
 
+    private class MyViewPager extends FragmentPagerAdapter {
 
-    private class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
-
-        @Override
-        public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            View view = LayoutInflater.from(getActivity()).inflate(R.layout.bulb_recyclerview_item, parent, false);
-            ViewHolder viewHolder = new ViewHolder(view);
-            return viewHolder;
+        public MyViewPager(FragmentManager fm) {
+            super(fm);
         }
 
         @Override
-        public void onBindViewHolder(ViewHolder holder, int position) {
-            holder.button.setText(colorBulbs[position]);
+        public Object instantiateItem(ViewGroup container, int position) {
+            return super.instantiateItem(container, position);
         }
 
         @Override
-        public int getItemCount() {
-            return colorBulbs.length;
+        public Fragment getItem(int position) {
+            Log.d(TAG, "getItem()");
+
+            return fragments.get(position);
         }
 
-        class ViewHolder extends RecyclerView.ViewHolder {
-            private Button button;
+        @Override
+        public int getCount() {
+//            Log.d(TAG, "getCount()");
 
-            public ViewHolder(View itemView) {
-                super(itemView);
-
-                button = (Button) itemView.findViewById(R.id.button);
-
-            }
+            return fragments.size();
         }
+
     }
-
 
 }

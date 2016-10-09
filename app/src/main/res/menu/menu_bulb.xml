@@ -6,7 +6,7 @@
     <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"
-        android:icon="@mipmap/icon_close_32"
+        android:icon="@mipmap/icon_close_64"
         android:title=""
         app:showAsAction="always" />
 </menu>
