@@ -23,6 +23,7 @@ public class Bulb_DoubleColorFragmentSub2 extends Fragment {
 
     private BulbActivity mActivity;
     private View view;
+/*
     private RecyclerView my_recyclerview;
     private String[] colorBulbs = {
             "开",
@@ -34,6 +35,7 @@ public class Bulb_DoubleColorFragmentSub2 extends Fragment {
             "7",
             "8",
     };
+*/
 
 
 
@@ -50,17 +52,17 @@ public class Bulb_DoubleColorFragmentSub2 extends Fragment {
         // Inflate the layout for this fragment
 
         view = inflater.inflate(R.layout.fragment_bulb__double_color_fragment_sub2, container, false);
-        my_recyclerview = (RecyclerView) view.findViewById(R.id.my_recycle_view);
+        /*my_recyclerview = (RecyclerView) view.findViewById(R.id.my_recycle_view);
         my_recyclerview.setLayoutManager(new GridLayoutManager(mActivity, 2));
         my_recyclerview.setAdapter(new MyAdapter());
-        my_recyclerview.addItemDecoration(new DividerGridItemDecoration(getActivity()));
+        my_recyclerview.addItemDecoration(new DividerGridItemDecoration(getActivity()));*/
 
 
         return view;
     }
 
 
-
+/*
     private class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
         @Override
@@ -90,7 +92,7 @@ public class Bulb_DoubleColorFragmentSub2 extends Fragment {
 
             }
         }
-    }
+    }*/
 
 
 
