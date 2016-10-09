@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:context="com.gta.administrator.infraredcontrol.bulb.BulbActivity">
+<!--
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -22,6 +23,7 @@
             app:navigationIcon="@mipmap/icon_menu"/>
 
     </android.support.design.widget.AppBarLayout>
+-->
 
     <include layout="@layout/activity_bulb_brands" />
 

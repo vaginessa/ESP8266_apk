@@ -35,16 +35,16 @@ public class BulbActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bulb);
-
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-
-        toolbar.inflateMenu(R.menu.menu_bulb);
-        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem item) {
-                return true;
-            }
-        });
+//
+//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+//
+//        toolbar.inflateMenu(R.menu.menu_bulb);
+//        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+//            @Override
+//            public boolean onMenuItemClick(MenuItem item) {
+//                return true;
+//            }
+//        });
 
 
 //
