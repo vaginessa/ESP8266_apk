@@ -8,6 +8,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -115,7 +116,15 @@ public class Main1Activity extends AppCompatActivity implements View.OnClickList
         buttons.get(0).setSelected(true);
 
 
-        new Baidu_IotHubModule().getEndpointList();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                new Baidu_IotHubModule().getEndpointList();
+//                new Baidu_IotHubModule().request();
+
+            }
+        }).start();
+
     }
 
     @Override
