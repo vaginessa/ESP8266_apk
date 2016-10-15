@@ -13,8 +13,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+//import com.baidubce.http.DefaultRetryPolicy;
 import com.gta.administrator.infraredcontrol.baidu_iot_hub.Baidu_IotHubModule;
 import com.gta.administrator.infraredcontrol.other.MyGradLayoutItem;
+
+//import org.slf4j.LoggerFactory;
+//import org.slf4j.helpers.SubstituteLoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -116,10 +120,15 @@ public class Main1Activity extends AppCompatActivity implements View.OnClickList
         buttons.get(0).setSelected(true);
 
 
+
+
+
+
         new Thread(new Runnable() {
             @Override
             public void run() {
-                new Baidu_IotHubModule().getEndpointList();
+                Baidu_IotHubModule module = new Baidu_IotHubModule();
+                module.getEndpointList();
 //                new Baidu_IotHubModule().request();
 
             }
