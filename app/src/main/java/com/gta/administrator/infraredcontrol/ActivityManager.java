@@ -5,6 +5,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.gta.administrator.infraredcontrol.baidu_iot_hub.MqttRequest;
 
@@ -50,6 +51,9 @@ public class ActivityManager {
                 public void onFaild() {
                     Log.d(TAG, "onFaild: 链接失败，请检查网络");
                     mqttRequest.closeMqttRequestThis();
+                    progressDismiss();
+                    showMessge();
+
                 }
             });
         }
@@ -81,4 +85,12 @@ public class ActivityManager {
         });
     }
 
+    private void showMessge() {
+        ((Activity)mContext).runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                Toast.makeText(mContext, "连接失败，请检查网络", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
 }

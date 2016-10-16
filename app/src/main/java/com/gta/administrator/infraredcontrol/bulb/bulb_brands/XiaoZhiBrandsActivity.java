@@ -7,10 +7,14 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.gta.administrator.infraredcontrol.R;
 import com.gta.administrator.infraredcontrol.baidu_iot_hub.MqttRequest;
 import com.gta.administrator.infraredcontrol.infrared_code.BulbCode;
+
+import org.eclipse.paho.client.mqttv3.IMqttDeliveryToken;
+import org.eclipse.paho.client.mqttv3.MqttMessage;
 
 public class XiaoZhiBrandsActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -35,9 +39,33 @@ public class XiaoZhiBrandsActivity extends AppCompatActivity implements View.OnC
         initView();
 
         mqttRequest = MqttRequest.getInstance();
+        mqttRequest.setCallbackListener(new MqttRequest.MqttCallbackListener() {
+            @Override
+            public void connectionLost(Throwable cause) {
 
+            }
+
+            @Override
+            public void messageArrived(String topic, MqttMessage message) {
+
+            }
+
+            @Override
+            public void deliveryComplete(IMqttDeliveryToken token) {
+                showErrorMsg("发送成功");
+            }
+        });
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (!mqttRequest.isConnected()) {
+            mqttRequest.openConnect();
+        }
+
+
+    }
 
     private void initView() {
         open_btn = (Button) findViewById(R.id.open_btn);
@@ -81,43 +109,119 @@ public class XiaoZhiBrandsActivity extends AppCompatActivity implements View.OnC
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.open_btn:
-                mqttRequest.publishMessage(BulbCode.getOpenCode());
+                mqttRequest.publishMessage(BulbCode.getOpenCode(), new MqttRequest.MqttPublishListener() {
+                    @Override
+                    public void onError() {
+                        showErrorMsg("请检查网络连接");
+
+                    }
+                });
                 break;
             case R.id.close_btn:
-                mqttRequest.publishMessage(BulbCode.getCloseCode());
+                mqttRequest.publishMessage(BulbCode.getCloseCode(),new MqttRequest.MqttPublishListener() {
+                    @Override
+                    public void onError() {
+                        showErrorMsg("请检查网络连接");
+
+                    }
+                });
 
                 break;
             case R.id.tv_up_btn:
-                mqttRequest.publishMessage(BulbCode.getUpCode());
+                mqttRequest.publishMessage(BulbCode.getUpCode(),new MqttRequest.MqttPublishListener() {
+                    @Override
+                    public void onError() {
+                        showErrorMsg("请检查网络连接");
+
+                    }
+                });
                 break;
             case R.id.tv_down_btn:
-                mqttRequest.publishMessage(BulbCode.getDownCode());
+                mqttRequest.publishMessage(BulbCode.getDownCode(),new MqttRequest.MqttPublishListener() {
+                    @Override
+                    public void onError() {
+                        showErrorMsg("请检查网络连接");
+
+                    }
+                });
 
                 break;
             case R.id.tv_left_btn:
-                mqttRequest.publishMessage(BulbCode.getLeftCode());
+                mqttRequest.publishMessage(BulbCode.getLeftCode(),new MqttRequest.MqttPublishListener() {
+                    @Override
+                    public void onError() {
+                        showErrorMsg("请检查网络连接");
+
+                    }
+                });
                 break;
             case R.id.tv_right_btn:
-                mqttRequest.publishMessage(BulbCode.getRightCode());
+                mqttRequest.publishMessage(BulbCode.getRightCode(),new MqttRequest.MqttPublishListener() {
+                    @Override
+                    public void onError() {
+                        showErrorMsg("请检查网络连接");
+
+                    }
+                });
 
                 break;
             case R.id.tv_ok_btn:
-                mqttRequest.publishMessage(BulbCode.getBrightessCode());
+                mqttRequest.publishMessage(BulbCode.getBrightessCode(),new MqttRequest.MqttPublishListener() {
+                    @Override
+                    public void onError() {
+                        showErrorMsg("请检查网络连接");
+
+                    }
+                });
                 break;
 
             case R.id.light_source_btn:
-                mqttRequest.publishMessage(BulbCode.getLightSourceCode());
+                mqttRequest.publishMessage(BulbCode.getLightSourceCode(),new MqttRequest.MqttPublishListener() {
+                    @Override
+                    public void onError() {
+                        showErrorMsg("请检查网络连接");
+
+                    }
+                });
                 break;
 
             case R.id.color_temp_reduce_btn:
-                mqttRequest.publishMessage(BulbCode.getColorTempReduceCode());
+                mqttRequest.publishMessage(BulbCode.getColorTempReduceCode(),new MqttRequest.MqttPublishListener() {
+                    @Override
+                    public void onError() {
+                        showErrorMsg("请检查网络连接");
+
+                    }
+                });
                 break;
             case R.id.color_temp_plus_btn:
-                mqttRequest.publishMessage(BulbCode.getColorTempPlusCode());
+                mqttRequest.publishMessage(BulbCode.getColorTempPlusCode(),new MqttRequest.MqttPublishListener() {
+                    @Override
+                    public void onError() {
+                        showErrorMsg("请检查网络连接");
+
+                    }
+                });
                 break;
             case R.id.section_btn:
-                mqttRequest.publishMessage(BulbCode.getSectionCode());
+                mqttRequest.publishMessage(BulbCode.getSectionCode(),new MqttRequest.MqttPublishListener() {
+                    @Override
+                    public void onError() {
+                        showErrorMsg("请检查网络连接");
+                    }
+                });
                 break;
         }
     }
+
+    
+    private void showErrorMsg(final String msg) {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                Toast.makeText(XiaoZhiBrandsActivity.this, msg, Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
 }

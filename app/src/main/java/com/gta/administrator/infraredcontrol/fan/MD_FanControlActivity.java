@@ -51,7 +51,7 @@ public class MD_FanControlActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                mqttRequest.publishMessage(FanCode.getOnFanCode());
+                mqttRequest.publishMessage(FanCode.getOnFanCode(),null);
 
             }
         });

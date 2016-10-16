@@ -65,7 +65,7 @@ public class AirConditionControlActivity extends AppCompatActivity {
             switch (v.getId()) {
                 case R.id.power_switch_button:
                     // 发送开空调电源码
-                    mqttRequest.publishMessage(AirConditionCode.getOpenCode());
+                    mqttRequest.publishMessage(AirConditionCode.getOpenCode(),null);
 
                     break;
             }

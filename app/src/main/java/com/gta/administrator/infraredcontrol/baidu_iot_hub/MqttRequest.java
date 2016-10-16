@@ -148,7 +148,7 @@ public class MqttRequest {
      * 发布一条消息
      * @param msg
      */
-    public void publishMessage(final String msg) {
+    public void publishMessage(final String msg, final MqttPublishListener listener) {
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -158,6 +158,12 @@ public class MqttRequest {
                     client.publish(topicA, message);  //发布消息
                 } catch (MqttException e) {
                     e.printStackTrace();
+                    if (listener != null) {
+                        Log.d(TAG, "请检查网络");
+                        listener.onError();
+                    }
+
+
                 }
             }
         }).start();
@@ -204,6 +210,7 @@ public class MqttRequest {
             new Thread(new Runnable() {
                 @Override
                 public void run() {
+                    //链接监听接口不为空
                     while (connectStatus == null) {
 
                     }
@@ -238,10 +245,12 @@ public class MqttRequest {
 
     private void closeConnect() {
         // 客户机断开连接
-        try {
-            client.disconnect();
-        } catch (MqttException e1) {
-            e1.printStackTrace();
+        if (client.isConnected()) {
+            try {
+                client.disconnect();
+            } catch (MqttException e1) {
+                e1.printStackTrace();
+            }
         }
     }
 
@@ -283,6 +292,13 @@ public class MqttRequest {
         void onSuccess();   // 连接成功后调用
 
         void onFaild();   //因网络问题连接失败后调用
+    }
+
+    /**
+     * 发送消息成功与否监听
+     */
+    public interface MqttPublishListener{
+        void onError(); //发送失败
     }
 
 }

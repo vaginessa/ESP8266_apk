@@ -126,15 +126,15 @@ public class Main1Activity extends AppCompatActivity implements View.OnClickList
 
 
 
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                Baidu_IotHubModule module = new Baidu_IotHubModule();
-                module.getEndpointList();
-//                new Baidu_IotHubModule().request();
-
-            }
-        }).start();
+//        new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                Baidu_IotHubModule module = new Baidu_IotHubModule();
+//                module.getEndpointList();
+////                new Baidu_IotHubModule().request();
+//
+//            }
+//        }).start();
 
 
 //        SharedPreferences preferences = getSharedPreferences("device", MODE_PRIVATE);

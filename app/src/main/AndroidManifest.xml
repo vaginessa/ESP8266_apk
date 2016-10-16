@@ -41,7 +41,9 @@
         <activity
             android:name=".satellite_tv.HW_TV"
             android:label="品牌1" />
-        <activity android:name=".AirConditionControlActivity" />
+        <activity android:name=".AirConditionControlActivity"
+            android:label="空调"
+            android:launchMode="singleTask"/>
         <activity
             android:name=".tv.TvBrandsListActivity"
             android:label="@string/tv_brands_select" />
@@ -54,7 +56,8 @@
         <activity
             android:name=".fan.FanBrandsListActivity"
             android:label="@string/fan_brands_select" />
-        <activity android:name=".fan.MD_FanControlActivity" />
+        <activity android:name=".fan.MD_FanControlActivity"
+            android:launchMode="singleTask"/>
         <activity android:name=".powerAmplification.PowerAmplification_BrandsActivity" />
         <activity android:name=".powerAmplification.TL_PowerAmplificationControlActivity" />
         <activity android:name=".dvd.DvdBrandsListActivity" />
@@ -66,7 +69,8 @@
         <activity android:name=".projectors.ProjectorsBrandsSelectActivity" />
         <activity android:name=".projectors.ProjectorsBrands1Activity" />
         <activity android:name=".satellite_tv.SatelliteTvBrandsActivity" />
-        <activity android:name=".bulb.bulb_brands.XiaoZhiBrandsActivity"></activity>
+        <activity android:name=".bulb.bulb_brands.XiaoZhiBrandsActivity"
+            android:launchMode="singleTask"></activity>
     </application>
 
 </manifest>
