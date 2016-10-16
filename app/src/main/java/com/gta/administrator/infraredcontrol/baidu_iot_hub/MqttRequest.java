@@ -236,7 +236,7 @@ public class MqttRequest {
         return client.isConnected();
     }
 
-    public void closeConnect() {
+    private void closeConnect() {
         // 客户机断开连接
         try {
             client.disconnect();

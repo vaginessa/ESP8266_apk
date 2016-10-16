@@ -31,6 +31,7 @@
             android:layout_weight="1"
             android:orientation="vertical">
             <Button
+                android:id="@+id/on_off_switch_btn"
                 style="@style/ItemNumberAttrs"
                 android:textColor="@color/colorRed"
                 android:text="开关"/>

@@ -79,7 +79,7 @@ public class BulbActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     for (int j = 0; j < item_id.length; j++) {
                         if (v.getId() == item_id[j]) {
-                            if (j == 1) {
+                            if (j == 1) {  // 如果为1则跳转到双色灯页面
                                 replaceFragment(R.id.bulb_framelayout, bulb_doubleColorFragment);
                             } else {
                                 replaceFragment(R.id.bulb_framelayout, bulb_colorFragment);
@@ -99,6 +99,11 @@ public class BulbActivity extends AppCompatActivity {
     }
 
 
+    /**
+     * Fragment的跳转
+     * @param layout
+     * @param fragment
+     */
     private void replaceFragment(int layout, Fragment fragment) {
         FragmentManager manager = getSupportFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();

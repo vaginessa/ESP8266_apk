@@ -35,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
 
     private RecyclerView my_recycle_view;
 
-    private ProgressDialog progressDialog;
 
     private static final int[] devicesImg = {
             R.mipmap.icon_mi_tv,
@@ -111,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
                     case 0:
                         break;
                     case 1:
-                        startActivity(AirConditionControlActivity.class);
+                        new ActivityManager(mContext).startActivity(AirConditionControlActivity.class);
 
                         break;
                     case 2:
@@ -122,6 +121,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case 4:
                         startActivity(new Intent(mContext, FanBrandsListActivity.class));
+//                        startActivity(FanBrandsListActivity.cla);
                         break;
                     case 6:
                         startActivity(new Intent(mContext, PowerAmplification_BrandsActivity.class));
@@ -162,62 +162,4 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    private void startActivity(final Class activity) {
-        // 获取MqttRequest实例
-        final MqttRequest mqttRequest = MqttRequest.getInstance();
-        // 检查是否处于连接状态
-        if (mqttRequest.isConnected()) {
-            startActivity(new Intent(mContext, activity));
-        } else {
-            // 第一次需要打开连接
-            mqttRequest.openConnect();
-            // 打开连接之后，监听连接过程的状态（连接成功或因网络问题失败）
-            mqttRequest.setMqttConnectStatusListener(new MqttRequest.MqttConnectStatusListener() {
-                @Override
-                public void onStartConn() {
-                    Log.d(TAG, "onStartConn: 启动链接");
-                    progressShow();//提示用户正在连接
-                }
-
-                @Override
-                public void onSuccess() {
-                    Log.d(TAG, "onSuccess: 链接成功");
-                    progressDismiss();
-                    startActivity(new Intent(mContext, activity));
-                }
-
-                @Override
-                public void onFaild() {
-                    Log.d(TAG, "onFaild: 链接失败，请检查网络");
-                    mqttRequest.closeMqttRequestThis();
-                }
-            });
-        }
-    }
-
-    /**
-     * 显示提示状态框
-     */
-    private void progressShow() {
-        runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                progressDialog = new ProgressDialog(mContext);
-                progressDialog.setMessage("连接中...");
-                progressDialog.show();
-            }
-        });
-    }
-
-    /**
-     * 销毁提示状态框
-     */
-    private void progressDismiss() {
-        runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                progressDialog.cancel();
-            }
-        });
-    }
 }

@@ -1,5 +1,6 @@
 package com.gta.administrator.infraredcontrol.fan;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +9,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.gta.administrator.infraredcontrol.ActivityManager;
 import com.gta.administrator.infraredcontrol.R;
 
 import java.util.ArrayList;
@@ -18,6 +20,7 @@ import java.util.List;
  */
 public class FanBrandsListActivity extends AppCompatActivity {
 
+    private Context mContext;
     private static final String[] fanBrandsName = {
             "美的"
     };
@@ -27,6 +30,7 @@ public class FanBrandsListActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mContext = this;
 
 
         setContentView(R.layout.activity_fan_brands_list);
@@ -40,7 +44,8 @@ public class FanBrandsListActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 switch (position) {
                     case 0:
-                        startActivity(new Intent(FanBrandsListActivity.this, MD_FanControlActivity.class));
+//                        startActivity(new Intent(FanBrandsListActivity.this, MD_FanControlActivity.class));
+                        new ActivityManager(mContext).startActivity(MD_FanControlActivity.class);
                         break;
                 }
             }

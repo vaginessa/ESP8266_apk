@@ -1,6 +1,7 @@
 package com.gta.administrator.infraredcontrol;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -9,17 +10,20 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 //import com.baidubce.http.DefaultRetryPolicy;
 import com.gta.administrator.infraredcontrol.baidu_iot_hub.Baidu_IotHubModule;
+import com.gta.administrator.infraredcontrol.baidu_iot_hub.MqttRequest;
 import com.gta.administrator.infraredcontrol.other.MyGradLayoutItem;
 
 //import org.slf4j.LoggerFactory;
 //import org.slf4j.helpers.SubstituteLoggerFactory;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -107,7 +111,7 @@ public class Main1Activity extends AppCompatActivity implements View.OnClickList
 
             }
         });
-        my_view_pager.setCurrentItem(0);
+        my_view_pager.setCurrentItem(1);//默认设备页
         home_button = (MyGradLayoutItem) findViewById(R.id.home_button);
         home_button.setOnClickListener(this);
         device_button = (MyGradLayoutItem) findViewById(R.id.device_button);
@@ -117,9 +121,7 @@ public class Main1Activity extends AppCompatActivity implements View.OnClickList
         buttons.add(home_button);
         buttons.add(device_button);
         buttons.add(set_button);
-        buttons.get(0).setSelected(true);
-
-
+        buttons.get(1).setSelected(true);
 
 
 
@@ -134,7 +136,14 @@ public class Main1Activity extends AppCompatActivity implements View.OnClickList
             }
         }).start();
 
+
+//        SharedPreferences preferences = getSharedPreferences("device", MODE_PRIVATE);
+//        SharedPreferences.Editor editor = preferences.edit();
+//        editor.putString("device", "test...");
+//        editor.commit();
+
     }
+
 
     @Override
     public void onClick(View v) {
@@ -172,6 +181,9 @@ public class Main1Activity extends AppCompatActivity implements View.OnClickList
     }
 
 
-
-
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        MqttRequest.getInstance().closeMqttRequestThis();
+    }
 }

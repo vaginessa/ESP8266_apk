@@ -38,8 +38,9 @@
         <activity
             android:name=".setTopBoxes.HW_TV"
             android:label="@string/hw_tv_activity" />
-        <activity android:name=".satellite_tv.HW_TV"
-            android:label="品牌1"/>
+        <activity
+            android:name=".satellite_tv.HW_TV"
+            android:label="品牌1" />
         <activity android:name=".AirConditionControlActivity" />
         <activity
             android:name=".tv.TvBrandsListActivity"
@@ -65,6 +66,7 @@
         <activity android:name=".projectors.ProjectorsBrandsSelectActivity" />
         <activity android:name=".projectors.ProjectorsBrands1Activity" />
         <activity android:name=".satellite_tv.SatelliteTvBrandsActivity" />
+        <activity android:name=".bulb.bulb_brands.XiaoZhiBrandsActivity"></activity>
     </application>
 
 </manifest>

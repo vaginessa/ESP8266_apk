@@ -118,7 +118,9 @@ public class Baidu_IotHubModule {
                         buffer.append(line);
                     }
 
-                    test();
+//                    if ()
+
+//                    test();
                     Log.d(tag, buffer.toString());
                     content.close();
                 }

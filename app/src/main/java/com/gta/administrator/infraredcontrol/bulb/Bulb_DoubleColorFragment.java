@@ -37,9 +37,10 @@ public class Bulb_DoubleColorFragment extends Fragment {
     private BulbActivity mActivity;
 
     private ViewPager my_viewpager;
-    private List<Fragment> fragments = new ArrayList<>(2);
+    private List<Fragment> fragments = new ArrayList<>(3);
     private Bulb_DoubleColorFragmentSub1 bulb_doubleColorFragmentSub1 = new Bulb_DoubleColorFragmentSub1();
     private Bulb_DoubleColorFragmentSub2 bulb_doubleColorFragmentSub2 = new Bulb_DoubleColorFragmentSub2();
+    private Bulb_DoubleColorFragmentSub3 bulb_doubleColorFragmentSub3 = new Bulb_DoubleColorFragmentSub3();
 
     private MyViewPager myViewPager;
 
@@ -52,6 +53,7 @@ public class Bulb_DoubleColorFragment extends Fragment {
 
         fragments.add(bulb_doubleColorFragmentSub1);
         fragments.add(bulb_doubleColorFragmentSub2);
+        fragments.add(bulb_doubleColorFragmentSub3);
     }
 
 
@@ -62,16 +64,11 @@ public class Bulb_DoubleColorFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_bulb__double_color, container, false);
         my_viewpager = (ViewPager) view.findViewById(R.id.my_viewpage);//获取到ViewPager
 
-        //这里注意必须传入getChildFragmentManager()，否则第二次进来Fragment不会显示
+        //这里注意必须传入getChildFragmentManager()不要传入getFragmentManager()，否则第二次进来Fragment不会显示
         //getFragmentManager()会调用父的FragmentManager
         myViewPager = new MyViewPager(getChildFragmentManager());
-//            my_viewpager.setCurrentItem(0);
         my_viewpager.setAdapter(myViewPager);
-
         Log.d(TAG, "onCreateView()");
-
-//        myViewPager.notifyDataSetChanged();
-
         return view;
     }
 
